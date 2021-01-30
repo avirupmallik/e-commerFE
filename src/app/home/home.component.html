@@ -76,10 +76,10 @@
       <div *ngIf = !islog class="collapse navbar-collapse" id="navbarResponsive" >
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link float-right" href="/registration">Sign Up</a>
+            <a class="nav-link float-right" [routerLink]="['/registration']">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link float-right" href="/login">Log In</a>
+            <a class="nav-link float-right" [routerLink]="['/login']">Log In</a>
           </li>
         </ul>
       </div>

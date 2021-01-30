@@ -36,7 +36,7 @@
             </a>
           </li>
           <li class="nav-item lis">
-            <a href="/carts" class="nav-link border border-light rounded waves-effect">
+            <a [routerLink]="['/carts']" class="nav-link border border-light rounded waves-effect">
               <span class="badge red z-depth-1 mr-1"> {{cartItemCount}} </span>
               <!-- <i class="fas fa-shopping-cart"></i>
               <span class="clearfix d-none d-sm-inline-block"> Cart </span> -->
@@ -55,14 +55,14 @@
             <a class="nav-link float-right" href="/registration">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link float-right" href="/login">Log In</a>
+            <a class="nav-link float-right" [routerLink]="['/login']">Log In</a>
           </li>
         </ul>
       </div>
       <div *ngIf = isLoggedUser class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="" (click) = "logOut()">Logout</a>
+            <a class="nav-link" [routerLink]="['/']" (click) = "logOut()">Logout</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="/login">Log In</a>

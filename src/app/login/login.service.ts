@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { TokenStorageService } from '../util/TokenStorageService';
 
 @Injectable({
@@ -19,8 +20,7 @@ export class LoginService {
   
   constructor(private router:Router,private http:HttpClient,private tokenStorage:TokenStorageService) { }
   private isOpen: BehaviorSubject<boolean> = new BehaviorSubject(this.tokenStorage.hasToken());
-
-  Url= "http://localhost:8083/api/auth/signin";
+  private baseUrl: string = environment.baseUrl+'/api/auth/signin';
    
 
   private login(credentials) :Observable<any> {
@@ -28,7 +28,7 @@ export class LoginService {
       "username":credentials.username,
       "password":credentials.password
     }
-    return this.http.post("http://localhost:8080/api/auth/signin",user,LoginService.HTTP_OPTIONS)
+    return this.http.post(this.baseUrl,user,LoginService.HTTP_OPTIONS)
   }
 
   loginSuccessOrNot(userDetails){
