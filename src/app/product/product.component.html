@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  <!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="product.component.css">
-  </head>
 <!-- Navbar -->
 <body>
 <nav class="navbar border-bottom border-dark bg-dark navbar-expand-lg">
@@ -21,7 +17,7 @@
         <!-- Left -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" routerLink = "/" href="">Home</a>
             </li>
         </ul>
       
@@ -30,13 +26,12 @@
         <ul class="navbar-nav nav-flex-icons">
           
           <li class="nav-item lis">
-            <a href="#" class="nav-link border border-light rounded waves-effect"
-              target="_blank">
+            <a href="" routerLink ="/" class="nav-link border border-light rounded waves-effect">
               <i class="fab fa-github mr-2"></i>Hello User
             </a>
           </li>
           <li class="nav-item lis">
-            <a [routerLink]="['/carts']" class="nav-link border border-light rounded waves-effect">
+            <a href="" [routerLink]="['/carts']" class="nav-link border border-light rounded waves-effect">
               <span class="badge red z-depth-1 mr-1"> {{cartItemCount}} </span>
               <!-- <i class="fas fa-shopping-cart"></i>
               <span class="clearfix d-none d-sm-inline-block"> Cart </span> -->
@@ -52,17 +47,17 @@
       <div *ngIf = !isLoggedUser class="collapse navbar-collapse" id="navbarResponsive" >
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link float-right" href="/registration">Sign Up</a>
+            <a class="nav-link float-right" href="" routerLink="/registration">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link float-right" [routerLink]="['/login']">Log In</a>
+            <a class="nav-link float-right" href="" [routerLink]="['/login']">Log In</a>
           </li>
         </ul>
       </div>
       <div *ngIf = isLoggedUser class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']" (click) = "logOut()">Logout</a>
+            <a class="nav-link" href="" [routerLink]="['/']" (click) = "logOut()">Logout</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="/login">Log In</a>

@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Custom styles for this template -->
-    <link href="cart.component.css" rel="stylesheet">
-  
-  </head>
+
+  <nav class="navbar border-bottom border-dark bg-dark navbar-expand-lg">
+    <div class="container">
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink = "/" href="">Home</a>
+            </li>
+        </ul>
+      
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          
+          <li class="nav-item lis">
+            <a href="" routerLink="/" class="nav-link border border-light rounded waves-effect">
+              <i class="fab fa-github mr-2"></i>Hello User
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
 
   <body>
+    
 <div class="px-4 px-lg-0">
     <!-- For demo purpose -->
     <div class="container text-white py-5 text-center">
-      <h1 class="display-4">Bootstrap 4 shopping cart</h1>
-      <p class="lead mb-0">Build a fully structred shopping cart page using Bootstrap 4. </p>
-      <p class="lead">Snippet by <a href="https://bootstrapious.com/snippets" class="text-white font-italic">
-              <u>Bootstrapious</u></a>
-      </p>
+      <h1 class="display-4">Online shopping cart</h1>
+      <p class="lead mb-0">Online shooping cart for user. </p>
     </div>
     <!-- End -->
   

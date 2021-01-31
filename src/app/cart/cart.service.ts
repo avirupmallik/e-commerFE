@@ -13,7 +13,7 @@ import { TokenStorageService } from "../util/TokenStorageService";
 export class CartService{
 
     constructor(private http:HttpClient,private loginSvc:LoginService){}
-    private baseUrl: string = environment.baseUrl+'/api/carts/';
+    private baseUrl: string = environment.baseUrl+'/api/v1/carts/';
     saveCartItem(cart:Cart) {
         
         let userId = cart.userId;
@@ -25,19 +25,19 @@ export class CartService{
    updateCartItem(cart:Cart) {
         
     let userId = cart.userId;
-     return this.http.put(`http://localhost:8080/api/v1/carts/${userId}`,cart).pipe(
+     return this.http.put(this.baseUrl+`${userId}`,cart).pipe(
       catchError(this.loginSvc.handleError)
     );
 }
 
    getCartItemByUser<Cart>(userId:Number) {
-     return this.http.get(`http://localhost:8080/api/v1/carts/${userId}`).pipe(
+     return this.http.get(this.baseUrl+`${userId}`).pipe(
       catchError(this.loginSvc.handleError)
     );
 }
 
 getCartItemByUserAndProductId<Cart>(userId:Number,productId:Number) {
-    return this.http.get(`http://localhost:8080/api/v1/carts/${userId}/${productId}`).pipe(
+    return this.http.get(this.baseUrl+`${userId}/${productId}`).pipe(
      catchError(this.loginSvc.handleError)
    );
 }

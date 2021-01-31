@@ -1,0 +1,44 @@
+<body>
+  <nav class="navbar border-bottom border-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">E-Commerce</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-img-left d-none d-md-flex">
+               <!-- Background image for card set in CSS! -->
+            </div>
+            <div class="card-body ls">
+              <h5 class="card-title text-center">Register</h5>
+              <form [formGroup] = "registrationForm" (ngSubmit)="regSubmit(registrationForm)">
+                <!-- <input type="file" formControlName="fileName"/><br><br>
+                <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid" value="upload" >Submit</button> -->
+                <div class="form-group"><input formControlName="firstName" placeholder="First name" autofocus></div>
+                <div class="form-group"><input formControlName="lastName" placeholder="Last name"></div>
+                <div class="form-group"><input formControlName="userName" placeholder="User name"></div>
+                <div class="form-group column" formGroupName="passwords">
+                <div class="form-group"><input type = "password" formControlName ="password" placeholder="Password"></div>
+                <div class="form-group"><input type = "password" formControlName="cnfPassword" placeholder="Confirm Password">
+                  <div style='color:#ff7355' *ngIf="registrationForm.get(['passwords','password']).value != registrationForm.get(['passwords','cnfPassword']).value">
+                    Password does not match</div>
+                </div>
+              </div>
+                <div class="form-group">
+                  <input formControlName="email" placeholder="Place your Email here">
+                </div> 
+                <div class="form-group">
+                  <input formControlName="phone" placeholder="Contact number"></div> 
+                <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">Register</button>
+               </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

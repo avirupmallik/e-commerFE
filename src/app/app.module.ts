@@ -7,11 +7,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import { HomeComponent } from './home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { AuthInterceptor } from './util/AuthInterceptor';
-import { TokenStorageService } from './util/TokenStorageService';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +20,15 @@ import { TokenStorageService } from './util/TokenStorageService';
     ProductComponent,
     HomeComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
